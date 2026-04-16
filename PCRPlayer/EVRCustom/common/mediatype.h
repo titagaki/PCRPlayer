@@ -522,14 +522,14 @@ namespace MediaFoundationSamples
             return hr;
         }
 
-        // Queries the 4×3 region of video that should be displayed in pan/scan mode.
+        // Queries the 4ï¾—3 region of video that should be displayed in pan/scan mode.
         HRESULT GetPanScanAperture(MFVideoArea *pArea)
         {
             CheckPointer(pArea, E_POINTER);
             return GetMediaType()->GetBlob(MF_MT_PAN_SCAN_APERTURE, (UINT8*)pArea, sizeof(MFVideoArea), NULL);
         }
         
-        // Sets the 4×3 region of video that should be displayed in pan/scan mode.
+        // Sets the 4ï¾—3 region of video that should be displayed in pan/scan mode.
         HRESULT SetPanScanAperture(const MFVideoArea& area)
         {
             return GetMediaType()->SetBlob(MF_MT_PAN_SCAN_APERTURE, (UINT8*)&area, sizeof(MFVideoArea));

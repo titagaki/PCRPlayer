@@ -219,7 +219,7 @@ bool PeerCastManager::createStatus(const InformationControl::Channel& channel, b
 	{
 		if (!info.comment.empty())
 		{
-			text.comment = L"Åu" + info.comment + L"Åv";
+			text.comment = L"„Äå" + info.comment + L"„Äç";
 		}
 	}
 
@@ -286,7 +286,7 @@ bool PeerCastManager::createPanel(const InformationControl::Channel& channel)
 
 	if (!info.comment.empty())
 	{
-		text += L"\r\n  Åu" + info.comment + L"Åv";
+		text += L"\r\n  „Äå" + info.comment + L"„Äç";
 	}
 
 	if (!info.cnv.playing.empty())

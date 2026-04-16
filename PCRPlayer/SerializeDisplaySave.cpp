@@ -134,7 +134,7 @@ void put(XmlParser& p, const InformationConfig::Channel& data)
 
 
 
-// ï\é¶ê›íË
+// Ë°®Á§∫Ë®≠ÂÆö
 
 void put(XmlParser& root, const DisplayConfig& display)
 {

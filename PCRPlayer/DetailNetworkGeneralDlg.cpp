@@ -1,4 +1,4 @@
-// DetailNetworkGeneralDlg.cpp : À‘•ƒtƒ@ƒCƒ‹
+// DetailNetworkGeneralDlg.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 
 
-// CDetailNetworkGeneralDlg ƒ_ƒCƒAƒƒO
+// CDetailNetworkGeneralDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 IMPLEMENT_DYNAMIC(CDetailNetworkGeneralDlg, CBasePropDlg)
 
@@ -32,16 +32,16 @@ BEGIN_MESSAGE_MAP(CDetailNetworkGeneralDlg, CBasePropDlg)
 END_MESSAGE_MAP()
 
 
-// CDetailNetworkGeneralDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CDetailNetworkGeneralDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 
 BOOL CDetailNetworkGeneralDlg::OnInitDialog()
 {
 	CBasePropDlg::OnInitDialog();
 
-	auto group = prop_.group(L"©“®Ä\’z");
+	auto group = prop_.group(L"è‡ªå‹•å†æ§‹ç¯‰");
 	prop_.add(group);
 	{
-		auto number = prop_.number(L"‘Ò‹@ŠÔ", cfg_.rebuild.wait);
+		auto number = prop_.number(L"å¾…æ©Ÿæ™‚é–“", cfg_.rebuild.wait);
 		number->EnableSpinControl(TRUE, 0, 600);
 		group->AddSubItem(number);
 	}
@@ -52,13 +52,13 @@ BOOL CDetailNetworkGeneralDlg::OnInitDialog()
 		auto string = prop_.string(L"UserAgent", cfg_.reader.userAgent);
 		group->AddSubItem(string);
 
-		auto number = prop_.number(L"ƒ^ƒCƒ€ƒAƒEƒg(ƒ~ƒŠ•b)", cfg_.reader.timeout);
+		auto number = prop_.number(L"ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ(ãƒŸãƒªç§’)", cfg_.reader.timeout);
 		number->EnableSpinControl(TRUE, 0, 60000);
 		group->AddSubItem(number);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-				  // —áŠO : OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Í•K‚¸ FALSE ‚ğ•Ô‚µ‚Ü‚·B
+				  // ä¾‹å¤– : OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã¯å¿…ãš FALSE ã‚’è¿”ã—ã¾ã™ã€‚
 }
 
 void CDetailNetworkGeneralDlg::OnGetProp()

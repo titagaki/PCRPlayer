@@ -1,4 +1,4 @@
-// DisplayInformationGeneralDlg.cpp : À‘•ƒtƒ@ƒCƒ‹
+// DisplayInformationGeneralDlg.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 
 
-// CDisplayInformationGeneralDlg ƒ_ƒCƒAƒƒO
+// CDisplayInformationGeneralDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 IMPLEMENT_DYNAMIC(CDisplayInformationGeneralDlg, CBasePropDlg)
 
@@ -32,45 +32,45 @@ BEGIN_MESSAGE_MAP(CDisplayInformationGeneralDlg, CBasePropDlg)
 END_MESSAGE_MAP()
 
 
-// CDisplayInformationGeneralDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CDisplayInformationGeneralDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 
 BOOL CDisplayInformationGeneralDlg::OnInitDialog()
 {
 	CBasePropDlg::OnInitDialog();
 
 	auto bindInfo = [&](CMFCPropertyGridProperty* group, sl::InformationConfig::Channel& value){
-		auto check = prop_.check(L"ƒ`ƒƒƒ“ƒlƒ‹–¼", value.name);
+		auto check = prop_.check(L"ãƒãƒ£ãƒ³ãƒãƒ«å", value.name);
 		group->AddSubItem(check);
-		check = prop_.check(L"ƒ^ƒCƒv", value.type);
+		check = prop_.check(L"ã‚¿ã‚¤ãƒ—", value.type);
 		group->AddSubItem(check);
-		check = prop_.check(L"ƒWƒƒƒ“ƒ‹", value.genre);
+		check = prop_.check(L"ã‚¸ãƒ£ãƒ³ãƒ«", value.genre);
 		group->AddSubItem(check);
-		check = prop_.check(L"Ú×", value.desc);
+		check = prop_.check(L"è©³ç´°", value.desc);
 		group->AddSubItem(check);
-		check = prop_.check(L"ƒRƒƒ“ƒg", value.comment);
+		check = prop_.check(L"ã‚³ãƒ¡ãƒ³ãƒˆ", value.comment);
 		group->AddSubItem(check);
-		check = prop_.check(L"ƒA[ƒeƒBƒXƒg", value.artist);
+		check = prop_.check(L"ã‚¢ãƒ¼ãƒ†ã‚£ã‚¹ãƒˆ", value.artist);
 		group->AddSubItem(check);
-		check = prop_.check(L"ƒ^ƒCƒgƒ‹", value.title);
+		check = prop_.check(L"ã‚¿ã‚¤ãƒˆãƒ«", value.title);
 		group->AddSubItem(check);
-		check = prop_.check(L"ƒAƒ‹ƒoƒ€", value.album);
+		check = prop_.check(L"ã‚¢ãƒ«ãƒãƒ ", value.album);
 		group->AddSubItem(check);
 	};
 
-	auto group = prop_.group(L"ƒ`ƒƒƒ“ƒlƒ‹î•ñ’uŠ·(ƒXƒe[ƒ^ƒXƒo[)");
+	auto group = prop_.group(L"ãƒãƒ£ãƒ³ãƒãƒ«æƒ…å ±ç½®æ›(ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãƒãƒ¼)");
 	prop_.add(group);
 	{
 		bindInfo(group, cfg_.status);
 	}
 
-	group = prop_.group(L"ƒ`ƒƒƒ“ƒlƒ‹î•ñ’uŠ·(ƒ|ƒbƒvƒAƒbƒv)");
+	group = prop_.group(L"ãƒãƒ£ãƒ³ãƒãƒ«æƒ…å ±ç½®æ›(ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—)");
 	prop_.add(group);
 	{
 		bindInfo(group, cfg_.panel);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-				  // —áŠO : OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Í•K‚¸ FALSE ‚ğ•Ô‚µ‚Ü‚·B
+				  // ä¾‹å¤– : OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã¯å¿…ãš FALSE ã‚’è¿”ã—ã¾ã™ã€‚
 }
 
 void CDisplayInformationGeneralDlg::OnGetProp()

@@ -1,4 +1,4 @@
-// DisplayResFormat2Dlg.cpp : À‘•ƒtƒ@ƒCƒ‹
+// DisplayResFormat2Dlg.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 
 
-// CDisplayResFormat2Dlg ƒ_ƒCƒAƒƒO
+// CDisplayResFormat2Dlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 IMPLEMENT_DYNAMIC(CDisplayResFormat2Dlg, CDialog)
 
@@ -58,21 +58,21 @@ BEGIN_MESSAGE_MAP(CDisplayResFormat2Dlg, CDialog)
 END_MESSAGE_MAP()
 
 
-// CDisplayResFormat2Dlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CDisplayResFormat2Dlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 
 
 BOOL CDisplayResFormat2Dlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	m_xcCmbPunct.InsertString(0, L"‚È‚µ");
-	m_xcCmbPunct.InsertString(1, L"ƒXƒy[ƒX");
-	m_xcCmbPunct.InsertString(2, L"ƒRƒƒ“");
+	m_xcCmbPunct.InsertString(0, L"ãªã—");
+	m_xcCmbPunct.InsertString(1, L"ã‚¹ãƒšãƒ¼ã‚¹");
+	m_xcCmbPunct.InsertString(2, L"ã‚³ãƒ­ãƒ³");
 	
 	InitControls();
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-	// —áŠO : OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Í•K‚¸ FALSE ‚ğ•Ô‚µ‚Ü‚·B
+	// ä¾‹å¤– : OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã¯å¿…ãš FALSE ã‚’è¿”ã—ã¾ã™ã€‚
 }
 
 
@@ -92,7 +92,7 @@ void CDisplayResFormat2Dlg::OnDestroy()
 {
 	CDialog::OnDestroy();
 
-	// TODO: ‚±‚±‚ÉƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[ ƒR[ƒh‚ğ’Ç‰Á‚µ‚Ü‚·B
+	// TODO: ã“ã“ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ ã‚³ãƒ¼ãƒ‰ã‚’è¿½åŠ ã—ã¾ã™ã€‚
 }
 
 void CDisplayResFormat2Dlg::OnCbnSelchangeCmbPunct()

@@ -11,7 +11,7 @@ struct InformationControl {
 	InformationControl()
 	{
 		typedef utl::ReplaceElement RE;
-		genre.push_back(RE(true, L"YP�f�ڐݒ���폜", L"^(sp|tp)(:?)(\\??)(@*)(\\+?)(#?)", L"", false));
+		genre.push_back(RE(true, L"YP掲載設定を削除", L"^(sp|tp)(:?)(\\??)(@*)(\\+?)(#?)", L"", false));
 	}
 
 	struct Channel {

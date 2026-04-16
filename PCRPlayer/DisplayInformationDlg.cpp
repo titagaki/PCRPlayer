@@ -1,4 +1,4 @@
-// DisplayInformationDlg.cpp : À‘•ƒtƒ@ƒCƒ‹
+// DisplayInformationDlg.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -8,7 +8,7 @@
 #include "afxdialogex.h"
 
 
-// CDisplayInformationDlg ƒ_ƒCƒAƒƒO
+// CDisplayInformationDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 IMPLEMENT_DYNAMIC(CDisplayInformationDlg, CDialog)
 
@@ -37,7 +37,7 @@ BEGIN_MESSAGE_MAP(CDisplayInformationDlg, CDialog)
 END_MESSAGE_MAP()
 
 
-// CDisplayInformationDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CDisplayInformationDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 
 
 BOOL CDisplayInformationDlg::OnInitDialog()
@@ -50,15 +50,15 @@ BOOL CDisplayInformationDlg::OnInitDialog()
 		vec_.push_back(item);
 	};
 
-	bind(L"‘S”Ê", &dlg_.general, IDD_BASE_PROP, 0);
-	bind(L"ƒ`ƒƒƒ“ƒlƒ‹–¼", &dlg_.name, CReplaceDlg::IDD, 1);
-	bind(L"ƒ^ƒCƒv", &dlg_.type, CReplaceDlg::IDD, 2);
-	bind(L"ƒWƒƒƒ“ƒ‹", &dlg_.genre, CReplaceDlg::IDD, 3);
-	bind(L"Ú×", &dlg_.desc, CReplaceDlg::IDD, 4);
-	bind(L"ƒRƒƒ“ƒg", &dlg_.comment, CReplaceDlg::IDD, 5);
-	bind(L"ƒA[ƒeƒBƒXƒg", &dlg_.artist, CReplaceDlg::IDD, 6);
-	bind(L"ƒ^ƒCƒgƒ‹", &dlg_.title, CReplaceDlg::IDD, 7);
-	bind(L"ƒAƒ‹ƒoƒ€", &dlg_.album, CReplaceDlg::IDD, 8);
+	bind(L"å…¨èˆ¬", &dlg_.general, IDD_BASE_PROP, 0);
+	bind(L"ãƒãƒ£ãƒ³ãƒãƒ«å", &dlg_.name, CReplaceDlg::IDD, 1);
+	bind(L"ã‚¿ã‚¤ãƒ—", &dlg_.type, CReplaceDlg::IDD, 2);
+	bind(L"ã‚¸ãƒ£ãƒ³ãƒ«", &dlg_.genre, CReplaceDlg::IDD, 3);
+	bind(L"è©³ç´°", &dlg_.desc, CReplaceDlg::IDD, 4);
+	bind(L"ã‚³ãƒ¡ãƒ³ãƒˆ", &dlg_.comment, CReplaceDlg::IDD, 5);
+	bind(L"ã‚¢ãƒ¼ãƒ†ã‚£ã‚¹ãƒˆ", &dlg_.artist, CReplaceDlg::IDD, 6);
+	bind(L"ã‚¿ã‚¤ãƒˆãƒ«", &dlg_.title, CReplaceDlg::IDD, 7);
+	bind(L"ã‚¢ãƒ«ãƒãƒ ", &dlg_.album, CReplaceDlg::IDD, 8);
 
 
 	m_xcTab.GetWindowRect(&rect_);
@@ -70,7 +70,7 @@ BOOL CDisplayInformationDlg::OnInitDialog()
 	m_xcTab.ModifyStyle(0, WS_CLIPCHILDREN);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-				  // —áŠO : OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Í•K‚¸ FALSE ‚ğ•Ô‚µ‚Ü‚·B
+				  // ä¾‹å¤– : OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã¯å¿…ãš FALSE ã‚’è¿”ã—ã¾ã™ã€‚
 }
 
 

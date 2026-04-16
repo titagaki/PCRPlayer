@@ -132,9 +132,9 @@ public:
 	}
 
 	virtual void add(const boost::shared_ptr<GridElement>& element, int space = 0);
-	virtual void adjust(GridRow& x); // ®—ñ‚³‚¹‚é
-	virtual void fit(GridRow& x); // ––”ö‚ğ‘µ‚¦‚é
-	virtual void fix();	// ®—ñ‚ÅƒYƒŒ‚½outline‚ğ’¼‚·
+	virtual void adjust(GridRow& x); // æ•´åˆ—ã•ã›ã‚‹
+	virtual void fit(GridRow& x); // æœ«å°¾ã‚’æƒãˆã‚‹
+	virtual void fix();	// æ•´åˆ—ã§ã‚ºãƒ¬ãŸoutlineã‚’ç›´ã™
 	virtual void align();
 
 	virtual void draw(CDC& dc, const CPoint& offset);

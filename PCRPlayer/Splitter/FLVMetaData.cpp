@@ -9,7 +9,7 @@
 		OutputDebugString(c); \
 	}
 #else
-#    define DebugText(str, ...) // ‹óŽÀ‘•
+#    define DebugText(str, ...) // ç©ºå®Ÿè£…
 #endif
 
 

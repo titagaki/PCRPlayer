@@ -40,7 +40,7 @@ public:
 	const boost::xpressive::wsregex& gt()
 	{// anchor
 		using namespace boost::xpressive;
-		const static boost::xpressive::wsregex rx = as_xpr(L"&gt;") | L'ÅÑ';
+		const static boost::xpressive::wsregex rx = as_xpr(L"&gt;") | L'Ôºû';
 		return rx;
 	}
 	const boost::xpressive::wsregex& gt2()
@@ -52,21 +52,21 @@ public:
 	const boost::xpressive::wsregex& number()
 	{// anchor
 		using namespace boost::xpressive;
-		const static boost::xpressive::wsregex rx = +(_d | range(L'ÇO', L'ÇX'));
+		const static boost::xpressive::wsregex rx = +(_d | range(L'Ôºê', L'Ôºô'));
 		return rx;
 	}
 
 	const boost::xpressive::wsregex& hyphen()
 	{// anchor
 		using namespace boost::xpressive;
-		const static boost::xpressive::wsregex rx = as_xpr(L'-') | L'Å|';
+		const static boost::xpressive::wsregex rx = as_xpr(L'-') | L'‚àí';
 		return rx;
 	}
 
 	const boost::xpressive::wsregex& comma()
 	{// anchor
 		using namespace boost::xpressive;
-		const static boost::xpressive::wsregex rx = as_xpr(L',') | L'ÅC';
+		const static boost::xpressive::wsregex rx = as_xpr(L',') | L'Ôºå';
 		return rx;
 	}
 

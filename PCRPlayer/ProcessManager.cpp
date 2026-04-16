@@ -26,11 +26,11 @@ void ProcessManager::close()
 			return;
 		}
 
-		// ƒvƒƒZƒX‚ÌI—¹‚ğ‘Ò‚Â
+		// ãƒ—ãƒ­ã‚»ã‚¹ã®çµ‚äº†ã‚’å¾…ã¤
 		DWORD result = WaitForSingleObject(p, 500);
-		if (result == WAIT_TIMEOUT) // ƒ^ƒCƒ€ƒAƒEƒg‚µ‚½
+		if (result == WAIT_TIMEOUT) // ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆã—ãŸ
 		{
-			// ‹­§I—¹
+			// å¼·åˆ¶çµ‚äº†
 			TerminateProcess(p, 0);
 			DWORD dwExitCode = 0;
 			GetExitCodeProcess(p, &dwExitCode);

@@ -10,11 +10,11 @@ std::wstring getGestureText(const std::vector<int>& gesture)
 		switch (*it)
 		{
 		default:
-		case DIRECTION_NONE:	tmp += L"ÅH"; break;
-		case DIRECTION_LEFT:	tmp += L"Å©"; break;
-		case DIRECTION_RIGHT:	tmp += L"Å®"; break;
-		case DIRECTION_UP:		tmp += L"Å™"; break;
-		case DIRECTION_DOWN:	tmp += L"Å´"; break;
+		case DIRECTION_NONE:	tmp += L"Ôºü"; break;
+		case DIRECTION_LEFT:	tmp += L"‚Üê"; break;
+		case DIRECTION_RIGHT:	tmp += L"‚Üí"; break;
+		case DIRECTION_UP:		tmp += L"‚Üë"; break;
+		case DIRECTION_DOWN:	tmp += L"‚Üì"; break;
 		}
 	}
 	return tmp;
@@ -50,31 +50,31 @@ void Gesture::move(const CPoint& pt)
 	if ((abs(mx) > movement_) && (abs(mx) >= abs(my)))
 	{
 		if (mx > 0)
-		{// ç∂
+		{// Â∑¶
 			if (dir_ == DIRECTION_LEFT) { pt_ = pt; return; }
 			dir_ = DIRECTION_LEFT;
-			//DebugText(L"Gesture: Å©\n");
+			//DebugText(L"Gesture: ‚Üê\n");
 		}
 		else
-		{// âE
+		{// Âè≥
 			if (dir_ == DIRECTION_RIGHT) { pt_ = pt; return; }
 			dir_ = DIRECTION_RIGHT;
-			//DebugText(L"Gesture: Å®\n");
+			//DebugText(L"Gesture: ‚Üí\n");
 		}
 	}
 	else if ((abs(my) > movement_) && (abs(mx) < abs(my)))
 	{
 		if (my > 0)
-		{// è„
+		{// ‰∏ä
 			if (dir_ == DIRECTION_UP) { pt_ = pt; return; }
 			dir_ = DIRECTION_UP;
-			//DebugText(L"Gesture: Å™\n");
+			//DebugText(L"Gesture: ‚Üë\n");
 		}
 		else
-		{// â∫
+		{// ‰∏ã
 			if (dir_ == DIRECTION_DOWN) { pt_ = pt; return; }
 			dir_ = DIRECTION_DOWN;
-			//DebugText(L"Gesture: Å´\n");
+			//DebugText(L"Gesture: ‚Üì\n");
 		}
 	}
 	else

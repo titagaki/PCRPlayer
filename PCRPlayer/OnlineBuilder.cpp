@@ -29,7 +29,7 @@ bool OnlineBuilder::render(HWND hwnd, UINT msg, const std::wstring& path)
 
 	boost::recursive_mutex::scoped_lock lock(mutex_);
 
-	text_ = L"\’z’†";
+	text_ = L"æ§‹ç¯‰ä¸­";
 
 	network::URLParser url(path);
 	if (url)
@@ -50,7 +50,7 @@ bool OnlineBuilder::render(HWND hwnd, UINT msg, const std::wstring& path)
 
 		if (source->isTimeout())
 		{
-			text_ = L"ƒ^ƒCƒ€ƒAƒEƒg";
+			text_ = L"ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ";
 			return false;
 		}
 
@@ -68,7 +68,7 @@ bool OnlineBuilder::render(HWND hwnd, UINT msg, const std::wstring& path)
 		}
 	}
 
-	text_ = L"\’z¸”s";
+	text_ = L"æ§‹ç¯‰å¤±æ•—";
 	return false;
 }
 
@@ -130,7 +130,7 @@ bool OnlineBuilder::onLoop(HWND hwnd, UINT msg, const std::wstring& path)
 
 	if (type.wmv.packet.enable)
 	{
-		// getPackets‚ÍWMV‚Ì‚Æ‚«‚Ì‚İ—LŒø
+		// getPacketsã¯WMVã®ã¨ãã®ã¿æœ‰åŠ¹
 		DWORD packets = 0;
 		if (!getPackets(packets)) { return true; }
 
@@ -149,7 +149,7 @@ bool OnlineBuilder::onLoop(HWND hwnd, UINT msg, const std::wstring& path)
 	}
 
 	//----------------------------------------------------------------------
-	// ƒoƒbƒtƒ@’†‚Å‚Í‚È‚¢
+	// ãƒãƒƒãƒ•ã‚¡ä¸­ã§ã¯ãªã„
 	if (buffer_.enable) { return true; }
 
 	if (type.wmv.frame.enable)
@@ -165,7 +165,7 @@ bool OnlineBuilder::onLoop(HWND hwnd, UINT msg, const std::wstring& path)
 			frames_.time = time;
 		}
 		else if ((dropped > frames_.dropped) && (time - frames_.time > type.wmv.frame.time))
-		{// frames_.dropped‚¾‚¯‘‚¦‚Ä‚¢‚éó‘Ô
+		{// frames_.droppedã ã‘å¢—ãˆã¦ã„ã‚‹çŠ¶æ…‹
 			addLog(L"Drawn:%d Dropped:%d Diff:%ums", drawn, dropped, time - frames_.time);
 			addLog(L"OnlineBuilder::onLoop (Rebuild Frames)");
 			if (!onRebuild(hwnd, msg, path)) { return false; }
@@ -177,7 +177,7 @@ bool OnlineBuilder::onLoop(HWND hwnd, UINT msg, const std::wstring& path)
 
 bool OnlineBuilder::rebuild(HWND hwnd, UINT msg, const std::wstring& path)
 {
-	addLog(L"©“®Ä\’z");
+	addLog(L"è‡ªå‹•å†æ§‹ç¯‰");
 
 	NetworkControl network;
 	{
@@ -188,11 +188,11 @@ bool OnlineBuilder::rebuild(HWND hwnd, UINT msg, const std::wstring& path)
 	int wait = network.rebuild.wait;
 	if (wait > 0)
 	{
-		text_ = rebuild_.state() + L" (’â~’†)";
+		text_ = rebuild_.state() + L" (åœæ­¢ä¸­)";
 	}
 	else
 	{
-		text_ = L"’â~’†";
+		text_ = L"åœæ­¢ä¸­";
 	}
 	{
 		boost::recursive_mutex::scoped_lock lock(mutex_);
@@ -242,17 +242,17 @@ std::wstring& OnlineBuilder::Rebuild::state(long state)
 	switch (state)
 	{
 	//case USERABORT_TAG_SIZE:
-	//case USERABORT_DATA_SIZE:		state_ = L"ƒf[ƒ^•s‘«"; break;
+	//case USERABORT_DATA_SIZE:		state_ = L"ãƒ‡ãƒ¼ã‚¿ä¸è¶³"; break;
 
 	//case USERABORT_PREVIOUS_TAG_SIZE:
 	//case USERABORT_STREAM_ID:
 	//case USERABORT_SYNC_ERROR:
-	//case USERABORT_DATA_ERROR:	state_ = L"•s³ƒf[ƒ^"; break;
+	//case USERABORT_DATA_ERROR:	state_ = L"ä¸æ­£ãƒ‡ãƒ¼ã‚¿"; break;
 
 	case USERABORT_TIMESTAMP_AUDIO:
-	case USERABORT_TIMESTAMP_VIDEO:	state_ = L"ƒ‹[ƒvŒŸo"; break;
+	case USERABORT_TIMESTAMP_VIDEO:	state_ = L"ãƒ«ãƒ¼ãƒ—æ¤œå‡º"; break;
 
-	default:						state_ = L"Ä\’z"; break;
+	default:						state_ = L"å†æ§‹ç¯‰"; break;
 	}
 	return state_;
 }

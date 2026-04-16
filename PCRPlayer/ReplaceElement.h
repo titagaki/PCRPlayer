@@ -36,7 +36,7 @@ struct ReplaceElement {
 		if (!enable) { return false; }
 
 		// regex_constants::single_line
-		// $‚ª‰üs‚Éƒ}ƒbƒ`‚µ‚È‚­‚È‚é
+		// $ãŒæ”¹è¡Œã«ãƒãƒƒãƒã—ãªããªã‚‹
 		wsregex::flag_type flag = regex_constants::single_line;
 		if (icase)
 		{
@@ -56,7 +56,7 @@ struct ReplaceElement {
 		using namespace boost::xpressive;
 
 		// regex_constants::single_line
-		// $‚ª‰üs‚Éƒ}ƒbƒ`‚µ‚È‚­‚È‚é
+		// $ãŒæ”¹è¡Œã«ãƒãƒƒãƒã—ãªããªã‚‹
 		wsregex::flag_type flag = regex_constants::single_line;
 		if (icase)
 		{

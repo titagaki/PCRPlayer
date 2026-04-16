@@ -6,7 +6,7 @@ bool CBrowserDlg::getStatus(std::wstring& text)
 {
 	int per = this_.dat.size() == 0 ? 100 : (((int)this_.pos * 100) / (int)this_.dat.size());
 	CString str;
-	str.Format(L"�ǂݍ��ݒ� %d%%", per);
+	str.Format(L"読み込み中 %d%%", per);
 	text = str.GetString();
 	return per < 100 && per > 0;
 }

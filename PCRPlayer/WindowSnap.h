@@ -8,8 +8,8 @@ struct SnapDistance {
 		, window(10)
 	{}
 
-	int screen; // スクリーンスナップ距離
-	int window; // ウィンドウスナップ距離
+	int screen; // 繧ｹ繧ｯ繝ｪ繝ｼ繝ｳ繧ｹ繝翫ャ繝苓ｷ晞屬
+	int window; // 繧ｦ繧｣繝ｳ繝峨え繧ｹ繝翫ャ繝苓ｷ晞屬
 };
 
 class WindowSnap

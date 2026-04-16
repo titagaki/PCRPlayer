@@ -1,4 +1,4 @@
-// DisplayTooltipDlg.cpp : À‘•ƒtƒ@ƒCƒ‹
+// DisplayTooltipDlg.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 //#include "afxdialogex.h"
 
 
-// CDisplayResDlg ƒ_ƒCƒAƒƒO
+// CDisplayResDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 IMPLEMENT_DYNAMIC(CDisplayResDlg, CDialog)
 
@@ -56,7 +56,7 @@ BEGIN_MESSAGE_MAP(CDisplayResDlg, CDialog)
 END_MESSAGE_MAP()
 
 
-// CDisplayResDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CDisplayResDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 
 
 BOOL CDisplayResDlg::OnInitDialog()
@@ -79,15 +79,15 @@ BOOL CDisplayResDlg::OnInitDialog()
 		vec_.push_back(item);
 	};
 
-	bind(L"‘®1", &dlg_.format1, CDisplayResFormat1Dlg::IDD, 0, [this](){ dlg_.format1.InitControls(); });
-	bind(L"‘®2", &dlg_.format2, CDisplayResFormat2Dlg::IDD, 1, [this](){ dlg_.format2.InitControls(); });
+	bind(L"æ›¸å¼1", &dlg_.format1, CDisplayResFormat1Dlg::IDD, 0, [this](){ dlg_.format1.InitControls(); });
+	bind(L"æ›¸å¼2", &dlg_.format2, CDisplayResFormat2Dlg::IDD, 1, [this](){ dlg_.format2.InitControls(); });
 	bind(L"ID", &dlg_.id, CDisplayResIDDlg::IDD, 2, [this](){ dlg_.id.InitControls(); });
-	bind(L"”zF1", &dlg_.color1, CDisplayResColor1Dlg::IDD, 3, [this](){ dlg_.color1.InitControls(); });
-	bind(L"”zF2", &dlg_.color2, CDisplayResColor2Dlg::IDD, 4, [this](){ dlg_.color2.InitControls(); });
-	bind(L"”zF3", &dlg_.color3, CDisplayResColor3Dlg::IDD, 5, [this](){ dlg_.color3.InitControls(); });
-	bind(L"ƒŒƒX", &dlg_.box, CDisplayResBoxDlg::IDD, 6, [this](){ dlg_.box.InitControls(); });
-	bind(L"V’…ƒŒƒX", &dlg_.latest, CDisplayResLatestDlg::IDD, 7, [this](){ dlg_.latest.InitControls(); });
-	bind(L"”wŒi", &dlg_.back, CDisplayResBackDlg::IDD, 8, [this](){ dlg_.back.InitControls(); });
+	bind(L"é…è‰²1", &dlg_.color1, CDisplayResColor1Dlg::IDD, 3, [this](){ dlg_.color1.InitControls(); });
+	bind(L"é…è‰²2", &dlg_.color2, CDisplayResColor2Dlg::IDD, 4, [this](){ dlg_.color2.InitControls(); });
+	bind(L"é…è‰²3", &dlg_.color3, CDisplayResColor3Dlg::IDD, 5, [this](){ dlg_.color3.InitControls(); });
+	bind(L"ãƒ¬ã‚¹", &dlg_.box, CDisplayResBoxDlg::IDD, 6, [this](){ dlg_.box.InitControls(); });
+	bind(L"æ–°ç€ãƒ¬ã‚¹", &dlg_.latest, CDisplayResLatestDlg::IDD, 7, [this](){ dlg_.latest.InitControls(); });
+	bind(L"èƒŒæ™¯", &dlg_.back, CDisplayResBackDlg::IDD, 8, [this](){ dlg_.back.InitControls(); });
 
 	m_xcTab.GetWindowRect(&rect_);
 	m_xcTab.AdjustRect(FALSE, &rect_);
@@ -103,7 +103,7 @@ BOOL CDisplayResDlg::OnInitDialog()
 	m_xcTab.ModifyStyle(0, WS_CLIPCHILDREN);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-	// —áŠO : OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Í•K‚¸ FALSE ‚ğ•Ô‚µ‚Ü‚·B
+	// ä¾‹å¤– : OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã¯å¿…ãš FALSE ã‚’è¿”ã—ã¾ã™ã€‚
 }
 
 

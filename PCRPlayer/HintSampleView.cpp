@@ -1,4 +1,4 @@
-// HintSampleView.cpp : À‘•ƒtƒ@ƒCƒ‹
+// HintSampleView.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -24,7 +24,7 @@ CHintSampleView::~CHintSampleView()
 BEGIN_MESSAGE_MAP(CHintSampleView, CSampleView)
 END_MESSAGE_MAP()
 
-// CHintSampleView ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CHintSampleView ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 
 void CHintSampleView::OnCustomPaint(CDC& dc, CDC& memDC, CRect& rc)
 {
@@ -36,11 +36,11 @@ void CHintSampleView::OnCustomPaint(CDC& dc, CDC& memDC, CRect& rc)
 	CBitmap* oldBmp = tmpDC.SelectObject(&bmp);
 	//////////////////////////////////////////////////////
 
-	// ”wŒiƒRƒs[
+	// èƒŒæ™¯ã‚³ãƒ”ãƒ¼
 	tmpDC.BitBlt(0, 0, rc.Width(), rc.Height(), &memDC, 0, 0, SRCCOPY);
 
 	CString text;
-	text.Format(L"%04d”N%02dŒ%02d“ú(%s) %02d:%02d:%02d\r\n12:34:56",
+	text.Format(L"%04då¹´%02dæœˆ%02dæ—¥(%s) %02d:%02d:%02d\r\n12:34:56",
 		time_.wYear, time_.wMonth, time_.wDay, utl::convertWeek(time_.wDayOfWeek),
 		time_.wHour, time_.wMinute, time_.wSecond, time_.wMilliseconds);
 

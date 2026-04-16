@@ -3,7 +3,7 @@
 
 namespace sl {
 
-// LOGFONTo—Í
+// LOGFONTå‡ºåŠ›
 void put(XmlParser& p, const LOGFONT& font)
 {
 	p.put(L"point", utl::heightToPoint(font.lfHeight));
@@ -24,7 +24,7 @@ void put(XmlParser& p, const LOGFONT& font)
 	p.put(L"lfFaceName", font.lfFaceName);
 }
 
-// LOGFONT“ü—Í
+// LOGFONTå…¥åŠ›
 void get(const XmlParser& p, LOGFONT& font)
 {
 	LOGFONT def = font;

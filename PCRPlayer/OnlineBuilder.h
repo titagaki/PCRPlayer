@@ -49,7 +49,7 @@ protected:
 		int dropped;
 	} frames_;
 
-	// �č\�z
+	// 再構築
 	class Rebuild {
 		int count_;
 		std::wstring state_;

@@ -1,4 +1,4 @@
-// OperationVariationDlg.cpp : À‘•ƒtƒ@ƒCƒ‹
+// OperationVariationDlg.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 
 
-// COperationVariationDlg ƒ_ƒCƒAƒƒO
+// COperationVariationDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 IMPLEMENT_DYNAMIC(COperationVariationDlg, CBasePropDlg)
 
@@ -32,52 +32,52 @@ BEGIN_MESSAGE_MAP(COperationVariationDlg, CBasePropDlg)
 END_MESSAGE_MAP()
 
 
-// COperationVariationDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// COperationVariationDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 
 BOOL COperationVariationDlg::OnInitDialog()
 {
 	CBasePropDlg::OnInitDialog();
 
 	auto bindValue = [this](CMFCPropertyGridProperty* group, sl::Variation::Value& value, int min, int max){
-		auto number = prop_.number(L"’Êí", value.normal);
+		auto number = prop_.number(L"é€šå¸¸", value.normal);
 		number->EnableSpinControl(TRUE, min, max);
 		group->AddSubItem(number);
 
-		number = prop_.number(L"¬(+Shift)", value.low);
+		number = prop_.number(L"å°(+Shift)", value.low);
 		number->EnableSpinControl(TRUE, min, max);
 		group->AddSubItem(number);
 
-		number = prop_.number(L"‘å(+Ctrl)", value.high);
+		number = prop_.number(L"å¤§(+Ctrl)", value.high);
 		number->EnableSpinControl(TRUE, min, max);
 		group->AddSubItem(number);
 	};
 
-	auto group = prop_.group(L"‰¹—Ê•Ï‰»—Ê(%)");
+	auto group = prop_.group(L"éŸ³é‡å¤‰åŒ–é‡(%)");
 	prop_.add(group);
 	{
 		bindValue(group, cfg_.volume, 0, 100);
 	}
 
-	group = prop_.group(L"ƒV[ƒNˆÚ“®—Ê(ƒ~ƒŠ•b)");
+	group = prop_.group(L"ã‚·ãƒ¼ã‚¯ç§»å‹•é‡(ãƒŸãƒªç§’)");
 	prop_.add(group);
 	{
 		bindValue(group, cfg_.seek, 0, 600000);
 	}
 
-	group = prop_.group(L"ƒXƒŒƒbƒhƒXƒNƒ[ƒ‹—Ê(ƒŒƒX”)");
+	group = prop_.group(L"ã‚¹ãƒ¬ãƒƒãƒ‰ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«é‡(ãƒ¬ã‚¹æ•°)");
 	prop_.add(group);
 	{
 		bindValue(group, cfg_.scroll, 0, 10000);
 	}
 
-	group = prop_.group(L"ƒEƒBƒ“ƒhƒEŠg‘å/k¬—Ê(%)");
+	group = prop_.group(L"ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦æ‹¡å¤§/ç¸®å°é‡(%)");
 	prop_.add(group);
 	{
 		bindValue(group, cfg_.scale, 0, 100);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-				  // —áŠO : OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Í•K‚¸ FALSE ‚ğ•Ô‚µ‚Ü‚·B
+				  // ä¾‹å¤– : OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã¯å¿…ãš FALSE ã‚’è¿”ã—ã¾ã™ã€‚
 }
 
 void COperationVariationDlg::OnGetProp()

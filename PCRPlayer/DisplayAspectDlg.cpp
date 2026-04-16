@@ -1,4 +1,4 @@
-// DisplayAspectDlg.cpp : À‘•ƒtƒ@ƒCƒ‹
+// DisplayAspectDlg.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -6,9 +6,9 @@
 #include "DisplayAspectDlg.h"
 //#include "afxdialogex.h"
 
-#define TOTAL_COUNT (30) // ‘”
+#define TOTAL_COUNT (30) // ç·æ•°
 
-// CDisplayAspectDlg ƒ_ƒCƒAƒƒO
+// CDisplayAspectDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 IMPLEMENT_DYNAMIC(CDisplayAspectDlg, CDialog)
 
@@ -76,7 +76,7 @@ BEGIN_MESSAGE_MAP(CDisplayAspectDlg, CDialog)
 END_MESSAGE_MAP()
 
 
-// CDisplayAspectDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CDisplayAspectDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 BOOL CDisplayAspectDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
@@ -84,7 +84,7 @@ BOOL CDisplayAspectDlg::OnInitDialog()
 
 	CRect rc(0, 0, 90, 0);
 	MapDialogRect(&rc);
-	m_xcListAspect.InsertColumn(0, L"ƒAƒXƒyƒNƒg”ä", LVCFMT_LEFT, rc.right);
+	m_xcListAspect.InsertColumn(0, L"ã‚¢ã‚¹ãƒšã‚¯ãƒˆæ¯”", LVCFMT_LEFT, rc.right);
 
 	m_xcSpinAspect1.SetRange32(1, INT_MAX);
 	m_xcSpinAspect2.SetRange32(1, INT_MAX);
@@ -92,7 +92,7 @@ BOOL CDisplayAspectDlg::OnInitDialog()
 	InitAspectControls();
 	
 	return TRUE;  // return TRUE unless you set the focus to a control
-	// —áŠO : OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Í•K‚¸ FALSE ‚ğ•Ô‚µ‚Ü‚·B
+	// ä¾‹å¤– : OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã¯å¿…ãš FALSE ã‚’è¿”ã—ã¾ã™ã€‚
 }
 
 

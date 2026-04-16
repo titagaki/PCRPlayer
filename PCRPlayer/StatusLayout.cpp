@@ -17,7 +17,7 @@ void StatusLayout::init(const StatusFormat& format, const boost::function<void(C
 	time.enable = format.time.enable;
 
 	volume.enable = format.volume.enable;
-	slider.enable = false; // ‰Šúó‘Ô‚Í‰B‚·
+	slider.enable = false; // åˆæœŸçŠ¶æ…‹ã¯éš ã™
 
 	getVideoRect_ = callback;
 }
@@ -179,7 +179,7 @@ void StatusLayout::rightDraw(CDC& dc, const CRect& rc)
 
 	if (slider.enable)
 	{
-		// ‘€ì«‚Ì‚½‚ß¶‰E‚É—]”’‚ðì‚é
+		// æ“ä½œæ€§ã®ãŸã‚å·¦å³ã«ä½™ç™½ã‚’ä½œã‚‹
 		CRect rc(slider.rect);
 		rc.left = min(rc.right, rc.left + SLIDER_MARGIN);
 		rc.right = max(rc.left, rc.right - SLIDER_MARGIN);
@@ -198,12 +198,12 @@ void StatusLayout::namePrepare(CDC& dc, const std::wstring& nametext)
 {
 	std::wstring str;
 	if (gl_.player.peercast())
-	{// ƒ`ƒƒƒ“ƒlƒ‹î•ñ
+	{// ãƒãƒ£ãƒ³ãƒãƒ«æƒ…å ±
 		gl_.peca.getStatus(str);
 	}
 
 	if (str.empty() && !nametext.empty())
-	{// ƒ`ƒƒƒ“ƒlƒ‹î•ñ‚ªŽæ“¾‚Å‚«‚È‚¢‚È‚çˆø”‚©‚ç
+	{// ãƒãƒ£ãƒ³ãƒãƒ«æƒ…å ±ãŒå–å¾—ã§ããªã„ãªã‚‰å¼•æ•°ã‹ã‚‰
 		str = nametext + L" ";
 	}
 
@@ -229,11 +229,11 @@ void StatusLayout::textPrepare(CDC& dc, bool online, long state)
 			switch (state)
 			{
 			case State_Running:
-				str = L"Ä¶’† ";
+				str = L"å†ç”Ÿä¸­ ";
 				break;
 
 			case State_Paused:
-				str = L"ˆêŽž’âŽ~ ";
+				str = L"ä¸€æ™‚åœæ­¢ ";
 				break;
 
 			case State_Stopped:
@@ -317,7 +317,7 @@ void StatusLayout::fpsPrepare(CDC& dc, bool online, long state)
 	int per = 0;
 	if (online && gl_.player.getProgress(per))
 	{
-		str.Format(L"ƒoƒbƒtƒ@’† (%d%%) ", per);
+		str.Format(L"ãƒãƒƒãƒ•ã‚¡ä¸­ (%d%%) ", per);
 
 		calcurect(dc, fps, std::wstring(str), false);
 		fps.reset = true;
@@ -402,7 +402,7 @@ void StatusLayout::timePrepare(CDC& dc, bool online)
 {
 	CString str;
 	if (online)
-	{// ƒIƒ“ƒ‰ƒCƒ“‚ÍŒ»ÝˆÊ’u‚Ì‚Ý
+	{// ã‚ªãƒ³ãƒ©ã‚¤ãƒ³ã¯ç¾åœ¨ä½ç½®ã®ã¿
 		LONGLONG cur = 0;
 		if (gl_.player.getCurrentPosition(cur))
 		{
@@ -482,7 +482,7 @@ void StatusLayout::calcurect(CDC& dc, Layout& layout, const std::wstring& str, b
 		if (indent)
 		{
 			if (layout.reset || layout.type != layout.old)
-			{// ƒCƒ“ƒfƒ“ƒgƒŠƒZƒbƒg
+			{// ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆãƒªã‚»ãƒƒãƒˆ
 				layout.width = calc.Width();
 				layout.fix = 0;
 				layout.old = layout.type;

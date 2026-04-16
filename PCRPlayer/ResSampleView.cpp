@@ -1,4 +1,4 @@
-// ResSampleView.cpp : À‘•ƒtƒ@ƒCƒ‹
+// ResSampleView.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -26,7 +26,7 @@ END_MESSAGE_MAP()
 
 
 
-// CResSampleView ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CResSampleView ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 
 void CResSampleView::OnCustomPaint(CDC& dc, CDC& memDC, CRect& rc)
 {
@@ -38,11 +38,11 @@ void CResSampleView::OnCustomPaint(CDC& dc, CDC& memDC, CRect& rc)
 	CBitmap* oldBmp = tmpDC.SelectObject(&bmp);
 	//////////////////////////////////////////////////////
 
-	// ”wŒiƒRƒs[
+	// èƒŒæ™¯ã‚³ãƒ”ãƒ¼
 	tmpDC.BitBlt(0, 0, rc.Width(), rc.Height(), &memDC, 0, 0, SRCCOPY);
 
 	std::array<std::wstring, 3> number = { L"1", L"10", L"100", };
-	std::array<std::wstring, 3> message = { L"ƒ[ƒ‹—“‚È‚µ", L"ƒ[ƒ‹—“‚ ‚è", L"ƒ[ƒ‹—“sage / V’…\r\n", };
+	std::array<std::wstring, 3> message = { L"ãƒ¡ãƒ¼ãƒ«æ¬„ãªã—", L"ãƒ¡ãƒ¼ãƒ«æ¬„ã‚ã‚Š", L"ãƒ¡ãƒ¼ãƒ«æ¬„sage / æ–°ç€\r\n", };
 	for (int i = 0; i < 3; ++i) { message.back() += L"0123456789"; }
 	std::array<std::wstring, 3> mail = { L"", L"age", L"sage", };
 
@@ -103,7 +103,7 @@ void CResSampleView::OnCustomPaint(CDC& dc, CDC& memDC, CRect& rc)
 					}
 					else
 					{
-						line[i].addX(memDC, L"–¼–³‚µ‚³‚ñ ", color[i](1), bold(1));
+						line[i].addX(memDC, L"åç„¡ã—ã•ã‚“ ", color[i](1), bold(1));
 					}
 						
 				}
@@ -111,9 +111,9 @@ void CResSampleView::OnCustomPaint(CDC& dc, CDC& memDC, CRect& rc)
 				{
 					if (cfg_.format.type != sl::ResConfig::FORMAT_NORMAL2)
 					{
-						line[i].addX(memDC, L"–¼–³‚µ‚³‚ñ", color[i](1), bold(1));
+						line[i].addX(memDC, L"åç„¡ã—ã•ã‚“", color[i](1), bold(1));
 					}
-					line[i].addX(memDC, L"ŸTEST ", color[i](1), NULL);
+					line[i].addX(memDC, L"â—†TEST ", color[i](1), NULL);
 				}
 				line[i].addX(memDC, L"[", color[i](9), bold(9));
 				line[i].addX(memDC, mail[i], color[i](2), bold(2));
@@ -178,11 +178,11 @@ void CResSampleView::OnCustomPaint(CDC& dc, CDC& memDC, CRect& rc)
 
 				if (cfg_.format.type == sl::ResConfig::FORMAT_SIMPLE1)
 				{
-					line[i].addX(memDC, L"–¼–³‚µ‚³‚ñ ", color[i](1), bold(1));
+					line[i].addX(memDC, L"åç„¡ã—ã•ã‚“ ", color[i](1), bold(1));
 				}
 				if (last)
 				{
-					line[i].addX(memDC, L"ŸTEST ", color[i](1), NULL);
+					line[i].addX(memDC, L"â—†TEST ", color[i](1), NULL);
 				}
 
 				line[i].add(memDC, message[i], color[i](5), bold(5), space, width, trim);
@@ -225,11 +225,11 @@ void CResSampleView::OnCustomPaint(CDC& dc, CDC& memDC, CRect& rc)
 
 				if (cfg_.format.type == sl::ResConfig::FORMAT_COMPACT1)
 				{
-					line[i].addX(memDC, L"–¼–³‚µ‚³‚ñ ", color[i](1), bold(1));
+					line[i].addX(memDC, L"åç„¡ã—ã•ã‚“ ", color[i](1), bold(1));
 				}
 				if (last)
 				{
-					line[i].addX(memDC, L"ŸTEST ", color[i](1), NULL);
+					line[i].addX(memDC, L"â—†TEST ", color[i](1), NULL);
 				}
 
 				line[i].add(memDC, message[i], color[i](5), bold(5), space, width, trim);

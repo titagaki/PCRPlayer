@@ -26,7 +26,7 @@ bool BBSRegex::convert(const std::wstring& text, Range& range)
 wchar_t BBSRegex::convert(wchar_t c)
 {
 	const wchar_t half[] = L"0123456789";
-	const wchar_t full[] = L"‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X";
+	const wchar_t full[] = L"ï¼ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™";
 	const int size = sizeof(full) / sizeof(full[0]);
 	for (int i = 0; i < size; ++i)
 	{

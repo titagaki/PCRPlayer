@@ -160,7 +160,7 @@ bool PeerCast::info(ChannelInfo& info) const
 
 		try {
 			using namespace boost::property_tree;
-			// xml“Ç‚İ‚İ
+			// xmlèª­ã¿è¾¼ã¿
 			wptree org;
 			boost::property_tree::read_xml(std::wstringstream(toUTF16(data.data())), org);
 

@@ -78,7 +78,7 @@ public:
 	operator bool() const { return valid_; }
 	operator std::wstring() const { return url_; }
 
-	// Ú‘±‚µ‚Ästream URL‚ğæ“¾‚·‚é
+	// æ¥ç¶šã—ã¦stream URLã‚’å–å¾—ã™ã‚‹
 	bool connect(std::wstring& stream, int timeout) const;
 
 	bool command(const std::wstring& cmd) const;
@@ -94,7 +94,7 @@ public:
 
 	void reset() { timer(false, true); }
 
-	// Ú‘±‚µ‚ÄXML‚©‚çƒ`ƒƒƒ“ƒlƒ‹î•ñ‚ğæ“¾‚·‚é
+	// æ¥ç¶šã—ã¦XMLã‹ã‚‰ãƒãƒ£ãƒ³ãƒãƒ«æƒ…å ±ã‚’å–å¾—ã™ã‚‹
 	bool info(ChannelInfo& info) const;
 
 private:

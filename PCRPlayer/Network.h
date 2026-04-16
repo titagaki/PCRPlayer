@@ -144,9 +144,9 @@ public:
 		return post(url, userAgent, proxy, data.data(), (DWORD)data.size(), std::wstring(), timeout);
 	}
 
-	int recv(std::vector<char>& dst);// ˆê‰ñ•ª‚Ì•ÔM‚¾‚¯ó‚¯æ‚é
-	int get(std::vector<char>& dst);// ƒtƒ@ƒCƒ‹‚ÌÅŒã‚Ü‚Åó‚¯æ‚é
-	int read(void* dst, unsigned int size);// w’èƒTƒCƒY‚Ü‚Åó‚¯æ‚é
+	int recv(std::vector<char>& dst);// ä¸€å›åˆ†ã®è¿”ä¿¡ã ã‘å—ã‘å–ã‚‹
+	int get(std::vector<char>& dst);// ãƒ•ã‚¡ã‚¤ãƒ«ã®æœ€å¾Œã¾ã§å—ã‘å–ã‚‹
+	int read(void* dst, unsigned int size);// æŒ‡å®šã‚µã‚¤ã‚ºã¾ã§å—ã‘å–ã‚‹
 
 	bool queryStatus(DWORD& code);
 	bool queryInfo(DWORD infoLevel, std::wstring& text);

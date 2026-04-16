@@ -244,7 +244,7 @@ void get(const XmlParser& root, DisplayConfig& display)
 		p.foreach(L"item", [&](const XmlParser& item){
 			std::wstring first;
 			StatusConfig second;
-			item.get(L"name", first, L"カスタム");
+			item.get(L"name", first, L"繧ｫ繧ｹ繧ｿ繝");
 			get(item, second);
 
 			display.custom.status.push_back(std::make_pair(first, second));
@@ -258,7 +258,7 @@ void get(const XmlParser& root, DisplayConfig& display)
 		p.foreach(L"item", [&](const XmlParser& item){
 			std::wstring first;
 			SeekConfig second;
-			item.get(L"name", first, L"カスタム");
+			item.get(L"name", first, L"繧ｫ繧ｹ繧ｿ繝");
 			get(item, second);
 
 			display.custom.seek.push_back(std::make_pair(first, second));
@@ -272,7 +272,7 @@ void get(const XmlParser& root, DisplayConfig& display)
 		p.foreach(L"item", [&](const XmlParser& item){
 			std::wstring first;
 			HintConfig second;
-			item.get(L"name", first, L"カスタム");
+			item.get(L"name", first, L"繧ｫ繧ｹ繧ｿ繝");
 			get(item, second);
 
 			display.custom.hint.push_back(std::make_pair(first, second));
@@ -286,7 +286,7 @@ void get(const XmlParser& root, DisplayConfig& display)
 		p.foreach(L"item", [&](const XmlParser& item){
 			std::wstring first;
 			ChannelConfig second;
-			item.get(L"name", first, L"カスタム");
+			item.get(L"name", first, L"繧ｫ繧ｹ繧ｿ繝");
 			get(item, second);
 
 			display.custom.channel.push_back(std::make_pair(first, second));
@@ -300,7 +300,7 @@ void get(const XmlParser& root, DisplayConfig& display)
 		p.foreach(L"item", [&](const XmlParser& item){
 			std::wstring first;
 			BBSConfig second;
-			item.get(L"name", first, L"カスタム");
+			item.get(L"name", first, L"繧ｫ繧ｹ繧ｿ繝");
 			get(item, second);
 
 			display.custom.bbs.push_back(std::make_pair(first, second));
@@ -314,7 +314,7 @@ void get(const XmlParser& root, DisplayConfig& display)
 		p.foreach(L"item", [&](const XmlParser& item){
 			std::wstring first;
 			ResConfig second;
-			item.get(L"name", first, L"カスタム");
+			item.get(L"name", first, L"繧ｫ繧ｹ繧ｿ繝");
 			get(item, second);
 
 			display.custom.res.push_back(std::make_pair(first, second));

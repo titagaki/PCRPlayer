@@ -1,4 +1,4 @@
-// DisplayWindowDlg.cpp : À‘•ƒtƒ@ƒCƒ‹
+// DisplayWindowDlg.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -6,9 +6,9 @@
 #include "DisplayWindowDlg.h"
 //#include "afxdialogex.h"
 
-#define TOTAL_COUNT (30) // ‘”
+#define TOTAL_COUNT (30) // ç·æ•°
 
-// CDisplayWindowDlg ƒ_ƒCƒAƒƒO
+// CDisplayWindowDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 IMPLEMENT_DYNAMIC(CDisplayWindowDlg, CDialog)
 
@@ -115,7 +115,7 @@ BEGIN_MESSAGE_MAP(CDisplayWindowDlg, CDialog)
 END_MESSAGE_MAP()
 
 
-// CDisplayWindowDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CDisplayWindowDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 BOOL CDisplayWindowDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
@@ -124,10 +124,10 @@ BOOL CDisplayWindowDlg::OnInitDialog()
 	MapDialogRect(&rc);
 
 	m_xcListZoom.InsertColumn(0, L"", LVCFMT_CENTER, rc.left);
-	m_xcListZoom.InsertColumn(1, L"”{—¦", LVCFMT_LEFT, rc.right);
+	m_xcListZoom.InsertColumn(1, L"å€ç‡", LVCFMT_LEFT, rc.right);
 
 	m_xcListSize.InsertColumn(0, L"", LVCFMT_CENTER, rc.left);
-	m_xcListSize.InsertColumn(1, L"ƒTƒCƒY", LVCFMT_LEFT, rc.right);
+	m_xcListSize.InsertColumn(1, L"ã‚µã‚¤ã‚º", LVCFMT_LEFT, rc.right);
 
 	m_xcSpinZoom.SetRange32(10, 1000);
 
@@ -138,7 +138,7 @@ BOOL CDisplayWindowDlg::OnInitDialog()
 	InitSizeControls();
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-	// —áŠO : OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Í•K‚¸ FALSE ‚ğ•Ô‚µ‚Ü‚·B
+	// ä¾‹å¤– : OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã¯å¿…ãš FALSE ã‚’è¿”ã—ã¾ã™ã€‚
 }
 
 

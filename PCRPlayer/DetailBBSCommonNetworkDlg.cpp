@@ -1,4 +1,4 @@
-// DetailBBSCommonNetworkDlg.cpp : À‘•ƒtƒ@ƒCƒ‹
+// DetailBBSCommonNetworkDlg.cpp : å®Ÿè£…ãƒ•ã‚¡ã‚¤ãƒ«
 //
 
 #include "stdafx.h"
@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 
 
-// CDetailBBSCommonNetworkDlg ƒ_ƒCƒAƒƒO
+// CDetailBBSCommonNetworkDlg ãƒ€ã‚¤ã‚¢ãƒ­ã‚°
 
 IMPLEMENT_DYNAMIC(CDetailBBSCommonNetworkDlg, CBasePropDlg)
 
@@ -32,7 +32,7 @@ BEGIN_MESSAGE_MAP(CDetailBBSCommonNetworkDlg, CBasePropDlg)
 END_MESSAGE_MAP()
 
 
-// CDetailBBSCommonNetworkDlg ƒƒbƒZ[ƒW ƒnƒ“ƒhƒ‰[
+// CDetailBBSCommonNetworkDlg ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 
 BOOL CDetailBBSCommonNetworkDlg::OnInitDialog()
 {
@@ -44,7 +44,7 @@ BOOL CDetailBBSCommonNetworkDlg::OnInitDialog()
 		auto string = prop_.string(L"UserAgent", cfg_.userAgent);
 		group->AddSubItem(string);
 
-		auto number = prop_.number(L"ƒ^ƒCƒ€ƒAƒEƒg(ƒ~ƒŠ•b)", cfg_.timeout);
+		auto number = prop_.number(L"ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆ(ãƒŸãƒªç§’)", cfg_.timeout);
 		number->EnableSpinControl(TRUE, 0, 60000);
 		group->AddSubItem(number);
 	}
@@ -52,21 +52,21 @@ BOOL CDetailBBSCommonNetworkDlg::OnInitDialog()
 	group = prop_.group(L"Proxy");
 	prop_.add(group);
 	{
-		auto string = prop_.string(cfg_.proxy.get.enable, L"“Ç‚İ‚İ—pProxy", cfg_.proxy.get.name);
+		auto string = prop_.string(cfg_.proxy.get.enable, L"èª­ã¿è¾¼ã¿ç”¨Proxy", cfg_.proxy.get.name);
 		group->AddSubItem(string);
 
-		string = prop_.string(cfg_.proxy.post.enable, L"‘‚«‚İ—pProxy", cfg_.proxy.post.name);
+		string = prop_.string(cfg_.proxy.post.enable, L"æ›¸ãè¾¼ã¿ç”¨Proxy", cfg_.proxy.post.name);
 		group->AddSubItem(string);
 
-		string = prop_.string(L"—LŒø‚É‚·‚éƒzƒXƒg(³‹K•\Œ»)", cfg_.proxy.white);
+		string = prop_.string(L"æœ‰åŠ¹ã«ã™ã‚‹ãƒ›ã‚¹ãƒˆ(æ­£è¦è¡¨ç¾)", cfg_.proxy.white);
 		group->AddSubItem(string);
 
-		string = prop_.string(L"–³Œø‚É‚·‚éƒzƒXƒg(³‹K•\Œ»)", cfg_.proxy.black);
+		string = prop_.string(L"ç„¡åŠ¹ã«ã™ã‚‹ãƒ›ã‚¹ãƒˆ(æ­£è¦è¡¨ç¾)", cfg_.proxy.black);
 		group->AddSubItem(string);
 	}
 
 	return TRUE;  // return TRUE unless you set the focus to a control
-				  // —áŠO : OCX ƒvƒƒpƒeƒB ƒy[ƒW‚Í•K‚¸ FALSE ‚ğ•Ô‚µ‚Ü‚·B
+				  // ä¾‹å¤– : OCX ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ ãƒšãƒ¼ã‚¸ã¯å¿…ãš FALSE ã‚’è¿”ã—ã¾ã™ã€‚
 }
 
 void CDetailBBSCommonNetworkDlg::OnGetProp()
