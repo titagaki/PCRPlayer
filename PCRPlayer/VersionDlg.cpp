@@ -43,7 +43,7 @@ BOOL CVersionDlg::OnInitDialog()
 	LITEM item = {};
 	item.mask = LIF_ITEMINDEX | LIF_URL;
 	item.iLink = 0;
-	wcscpy_s(item.szUrl, L"http://pecatv.s25.xrea.com/");
+	wcscpy_s(item.szUrl, L"https://github.com/titagaki/PCRPlayer");
 	m_xcLinkUrl.SetItem(&item);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
@@ -63,7 +63,7 @@ void CVersionDlg::OnNMClickLinkUrl(NMHDR *pNMHDR, LRESULT *pResult)
 {
 	PNMLINK pNMLink = (PNMLINK)pNMHDR;
 
-	std::wstring url = L"http://pecatv.s25.xrea.com/";
+	std::wstring url = L"https://github.com/titagaki/PCRPlayer";
 	utl::selectExecute(gl_.value.detail.browser.def, gl_.value.detail.browser.web, url);
 
 	if (pResult) { *pResult = 0; }
