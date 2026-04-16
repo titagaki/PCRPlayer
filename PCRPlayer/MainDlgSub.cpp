@@ -807,7 +807,19 @@ void CMainDlg::InflateWindowRect(RECT& src)
 	CRect rc(src);
 	if (gl_.value.window.show.frame)
 	{
-		utl::inflateWindowRect(rc, gl_.value.window.show.title, true);
+		if (::IsWindow(GetSafeHwnd()))
+		{
+			// GetWindowRect/GetClientRect の実差分を使い、SM_CX* の誤差を避ける
+			CRect winRect, clientRect;
+			GetWindowRect(&winRect);
+			GetClientRect(&clientRect);
+			rc.right  += winRect.Width()  - clientRect.Width();
+			rc.bottom += winRect.Height() - clientRect.Height();
+		}
+		else
+		{
+			utl::inflateWindowRect(rc, gl_.value.window.show.title, true);
+		}
 	}
 
 	CSize size;
@@ -822,7 +834,18 @@ void CMainDlg::DeflateWindowRect(RECT& src)
 	CRect rc(src);
 	if (gl_.value.window.show.frame)
 	{
-		utl::deflateWindowRect(rc, gl_.value.window.show.title, true);
+		if (::IsWindow(GetSafeHwnd()))
+		{
+			CRect winRect, clientRect;
+			GetWindowRect(&winRect);
+			GetClientRect(&clientRect);
+			rc.right  -= winRect.Width()  - clientRect.Width();
+			rc.bottom -= winRect.Height() - clientRect.Height();
+		}
+		else
+		{
+			utl::deflateWindowRect(rc, gl_.value.window.show.title, true);
+		}
 	}
 
 	CSize size;
