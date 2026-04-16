@@ -4,7 +4,52 @@ namespace bbs {
 
 std::string urlencode(const std::wstring& src, Mlang::CODE code)
 {
-	return utl::urlencode(Mlang::decode(src, code));
+	std::string result;
+	for (size_t i = 0; i < src.size(); )
+	{
+		wchar_t ch = src[i];
+		uint32_t codepoint;
+		int charLen;
+
+		// サロゲートペアを検出する（絵文字などのBMP外文字）
+		if (ch >= 0xD800 && ch <= 0xDBFF && i + 1 < src.size())
+		{
+			wchar_t low = src[i + 1];
+			if (low >= 0xDC00 && low <= 0xDFFF)
+			{
+				codepoint = 0x10000 + ((ch - 0xD800) << 10) + (low - 0xDC00);
+				charLen = 2;
+			}
+			else
+			{
+				codepoint = static_cast<uint32_t>(ch);
+				charLen = 1;
+			}
+		}
+		else
+		{
+			codepoint = static_cast<uint32_t>(ch);
+			charLen = 1;
+		}
+
+		// 1文字ずつエンコードし、ラウンドトリップで検証する
+		std::wstring charStr = src.substr(i, charLen);
+		std::string encoded = Mlang::decode(charStr, code);
+		std::wstring roundTrip = encoded.empty() ? std::wstring() : Mlang::decode(encoded, code);
+
+		if (roundTrip != charStr)
+		{
+			// 対象文字セットでエンコード不可 -> 数値文字参照を出力: &#CODEPOINT;
+			result += "&#" + (boost::format("%d") % codepoint).str() + ";";
+		}
+		else
+		{
+			result += encoded;
+		}
+
+		i += charLen;
+	}
+	return utl::urlencode(result);
 }
 
 double calcSpeed(int count, const std::wstring& key)

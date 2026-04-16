@@ -3,6 +3,11 @@
 A modified fork of [PCRPlayer](http://pecatv.s25.xrea.com/) —
 a Windows BBS viewer/poster for 2ch/Shitaraba style boards.
 
+## Changes from original
+
+- 絵文字（例: ❤, 🌊）が `??` として投稿されるのを修正  
+  Shift-JIS でエンコードできない文字を数値文字参照（例: `&#127754;`）に変換するようにした。（Chrome の動作に合わせた修正）
+
 ## Build requirements
 
 - Visual Studio 2022 with Visual C++
