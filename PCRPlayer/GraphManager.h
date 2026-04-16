@@ -26,12 +26,6 @@
 
 //#pragma warning(pop)
 
-#ifndef _DEBUG
-#pragma comment(lib, "strmbase.lib")
-#else
-#pragma comment(lib, "strmbasd.lib")
-#endif
-
 
 namespace dsp {
 

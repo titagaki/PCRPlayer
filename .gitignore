@@ -1,0 +1,53 @@
+# Visual Studio cache/options directory
+.vs/
+
+# Build output directories
+Debug/
+Release/
+x64/
+x86/
+
+# Compiled object files
+*.obj
+*.pch
+
+# Linker files
+*.ilk
+*.map
+*.exp
+*.lib
+
+# Executables and DLLs
+*.exe
+*.dll
+*.pdb
+
+# Precompiled headers
+*.gch
+
+# Visual Studio project user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docview
+
+# Visual Studio IntelliSense database
+*.VC.db
+*.VC.opendb
+*.ipch
+
+# NuGet packages
+packages/
+*.nupkg
+
+# MSBuild logs
+*.log
+msbuild.binlog
+
+# Temporary files
+*.tmp
+*.bak
+~$*
+
+# Claude Code
+.claude/

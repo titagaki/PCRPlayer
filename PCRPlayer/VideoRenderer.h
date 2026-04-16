@@ -12,7 +12,6 @@
 
 #include <initguid.h>
 #include <qnetwork.h>
-#include <qedit.h>
 
 #include <streams.h>
 
