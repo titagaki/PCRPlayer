@@ -505,8 +505,8 @@ HRESULT D3DResizer::TextureResizeShader(IDirect3DTexture9* pTexture, const CRect
 	Vector dst[4];
 	Transform(dstRect, dst);
 
-	const float w = sqrt(pow(dst[1].x - dst[0].x, 2) + pow(dst[1].y - dst[0].y, 2) + pow(dst[1].z - dst[0].z, 2));
-	const float h = sqrt(pow(dst[2].x - dst[0].x, 2) + pow(dst[2].y - dst[0].y, 2) + pow(dst[2].z - dst[0].z, 2));
+	const float w = sqrtf(powf(dst[1].x - dst[0].x, 2) + powf(dst[1].y - dst[0].y, 2) + powf(dst[1].z - dst[0].z, 2));
+	const float h = sqrtf(powf(dst[2].x - dst[0].x, 2) + powf(dst[2].y - dst[0].y, 2) + powf(dst[2].z - dst[0].z, 2));
 	const float rx = srcRect.Width() / w;
 	const float ry = srcRect.Height() / h;
 
@@ -565,8 +565,8 @@ HRESULT D3DResizer::TextureResizeShader2pass(IDirect3DTexture9* pTexture, const 
 	Transform(dstRect, dst);
 
 	// 縮小係数
-	const float w2 = sqrt(pow(dst[1].x - dst[0].x, 2) + pow(dst[1].y - dst[0].y, 2) + pow(dst[1].z - dst[0].z, 2));
-	const float h2 = sqrt(pow(dst[2].x - dst[0].x, 2) + pow(dst[2].y - dst[0].y, 2) + pow(dst[2].z - dst[0].z, 2));
+	const float w2 = sqrtf(powf(dst[1].x - dst[0].x, 2) + powf(dst[1].y - dst[0].y, 2) + powf(dst[1].z - dst[0].z, 2));
+	const float h2 = sqrtf(powf(dst[2].x - dst[0].x, 2) + powf(dst[2].y - dst[0].y, 2) + powf(dst[2].z - dst[0].z, 2));
 	const float rx = srcRect.Width() / w2;
 	const float ry = srcRect.Height() / h2;
 

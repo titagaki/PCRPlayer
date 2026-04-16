@@ -31,14 +31,6 @@ bool getOSVersion(DWORD& major, DWORD& minor, DWORD& build)
 		FreeLibrary(hmod);
 	}
 
-	OSVERSIONINFO info = { sizeof(OSVERSIONINFO) };
-	if (GetVersionEx(&info))
-	{
-		major = info.dwMajorVersion;
-		minor = info.dwMinorVersion;
-		build = info.dwBuildNumber;
-		return true;
-	}
 	return false;
 }
 
@@ -573,40 +565,32 @@ std::wstring convertDate(const boost::posix_time::ptime& time, int dateFormat, i
 	{
 	case sl::DATETIME_TIME_FORMAT_12_ENGLISH:
 		{
-			int hour = time.time_of_day().hours();
+			int hour = static_cast<int>(time.time_of_day().hours());
+			int min  = static_cast<int>(time.time_of_day().minutes());
+			int sec  = static_cast<int>(time.time_of_day().seconds());
 			if (hour > 12)
 			{
-				swprintf_s(
-					timeBuff,
-					L"PM %02d:%02d:%02d",
-					hour - 12, time.time_of_day().minutes(), time.time_of_day().seconds());
+				swprintf_s(timeBuff, L"PM %02d:%02d:%02d", hour - 12, min, sec);
 			}
 			else
 			{
-				swprintf_s(
-					timeBuff,
-					L"AM %02d:%02d:%02d",
-					hour, time.time_of_day().minutes(), time.time_of_day().seconds());
+				swprintf_s(timeBuff, L"AM %02d:%02d:%02d", hour, min, sec);
 			}
 			break;
 		}
 
 	case sl::DATETIME_TIME_FORMAT_12_KANJI:
 		{
-			int hour = time.time_of_day().hours();
+			int hour = static_cast<int>(time.time_of_day().hours());
+			int min  = static_cast<int>(time.time_of_day().minutes());
+			int sec  = static_cast<int>(time.time_of_day().seconds());
 			if (hour > 12)
 			{
-				swprintf_s(
-					timeBuff,
-					L"午後 %02d:%02d:%02d",
-					hour - 12, time.time_of_day().minutes(), time.time_of_day().seconds());
+				swprintf_s(timeBuff, L"午後 %02d:%02d:%02d", hour - 12, min, sec);
 			}
 			else
 			{
-				swprintf_s(
-					timeBuff,
-					L"午前 %02d:%02d:%02d",
-					hour, time.time_of_day().minutes(), time.time_of_day().seconds());
+				swprintf_s(timeBuff, L"午前 %02d:%02d:%02d", hour, min, sec);
 			}
 			break;
 		}
@@ -616,7 +600,9 @@ std::wstring convertDate(const boost::posix_time::ptime& time, int dateFormat, i
 		swprintf_s(
 			timeBuff,
 			L"%02d:%02d:%02d",
-			time.time_of_day().hours(), time.time_of_day().minutes(), time.time_of_day().seconds());
+			static_cast<int>(time.time_of_day().hours()),
+			static_cast<int>(time.time_of_day().minutes()),
+			static_cast<int>(time.time_of_day().seconds()));
 		break;
 	}
 
